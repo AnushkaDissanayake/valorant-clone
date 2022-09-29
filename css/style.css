@@ -54,7 +54,7 @@ header>.col:last-child>div{
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 50ms;
+    transition: 50ms;
 }
 #btn-playnow:hover{
     background: rgb(255,70, 85);
