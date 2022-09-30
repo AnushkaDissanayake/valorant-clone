@@ -37,7 +37,7 @@ header > .col{
 }
 
 header > .col:first-child{
-    padding-left: 16px;
+    padding-left: 34px;
     width: 190px;
     background-color: #111;
 }
@@ -45,6 +45,7 @@ header > .col:first-child{
 header > .col:nth-child(2){
     width: calc(100% - 190px - 195px);
     background-color: #111;
+    padding-left: 19px;
 }
 
 header > .col:last-child{
@@ -158,6 +159,7 @@ header > .col:last-child > div{
 
 #nav-main > li.submenu{
     position: relative;
+    
 }
 
 #nav-main > li.submenu li{
@@ -183,8 +185,12 @@ header > .col:last-child > div{
     width: 205px;
     background-color: #292929;
     top: 69px;
+   
 }
-
+header{
+    /* position: relative; */
+    z-index: 1;
+}
 #nav-main .submenu nav::before{
     content: "";
     position: absolute;
@@ -199,20 +205,23 @@ header > .col:last-child > div{
 #nav-main > .submenu:hover nav{
     display: block;
 }
+#nav-main>li>a>svg{
+    margin-left: 4px;
+}
 
 #riot-games{
     background-color: #111;
     float: left;
     position: relative;
-    top: 50%;
+    top: 53%;
     transform: translateY(-50%);
 }
 #riot-games svg:first-child{
     fill: #f9f9f9;
 }
 #riot-games svg:last-child{
-    line-height: 27px;
-    vertical-align: super;
+    line-height: 22px;
+    vertical-align: 50%;
     fill: #7b7b7b;
 }
 #logo{
@@ -234,4 +243,176 @@ header > .col:last-child > div{
 #riot-games:hover svg{
     fill: #eb0029;
     cursor: pointer;
+}
+#overlay{
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color:rgba(17, 17, 17, 0.7);
+    z-index: 99;
+}
+#mega-menu{
+    height:0%;
+    background-color: white;
+    transition: height 500ms;
+}
+#welcome-video{
+    vertical-align: top;
+    width: 100vw;
+    height: calc(100vh * 0.71);
+    object-fit:cover;
+
+}
+
+main{
+    position: relative;
+    z-index: 0;
+    margin-top: 78px;
+    background-color: #ece8e1;
+}
+
+#video-wrapper{
+    position: relative;
+    z-index: 1;
+}
+
+#video-wrapper::before{
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    border-bottom: 50px solid #ece8e1;
+    border-right: 50px solid transparent
+}
+
+#welcome-video{
+    width: 100vw;
+    height: calc(100vh * 0.71);
+    object-fit: cover;
+    z-index: 2;
+}
+
+main p{
+    padding-top: 75px;
+}
+
+#video-wrapper > .wrapper{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    right: 0;
+    /* bottom: 0; */
+    margin: auto;
+    z-index: 999;
+    transform: translateY(-66%);
+}
+
+#video-wrapper > .wrapper p{
+    text-align: center;
+    color: #ece8e1;
+    padding-bottom: 35px;
+}
+
+#product-logo{
+    width: 650px;
+    height: 93px;
+    margin: auto;
+}
+
+#product-logo svg{
+    fill: #ece8e1;
+}
+
+#btn-play{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 246px;
+    height: 54px;
+    background-color: #ff4655;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    line-height: 54px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+#btn-play::before{
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    z-index: 999;
+}
+
+#btn-play::after{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    top: 0;
+    left: -120%;
+    background-color: #0f1923;
+    transition: left 250ms;
+    transform: skew(-15deg);
+    z-index: -1;
+}
+
+#btn-play:hover::after{
+    left: -5%;
+}
+
+#btn-play:hover::before{
+    background-color: #ece8e1;
+}
+
+
+#btn-play span{
+    z-index: 999;
+}
+
+#button-wrapper{
+    position: relative;
+    padding-top: 35px;
+    cursor: pointer;
+}
+
+#button-wrapper::before{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 260px;
+    height: 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: calc(50% - 20px);
+    border: 1px solid hsla(38,22%,90%,.5);
+    border-bottom: none;
+}
+
+#button-wrapper::after{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 260px;
+    height: 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: calc(50% + 20px);
+    border: 1px solid hsla(38,22%,90%,.5);
+    border-top: none;
+    z-index: -1;
 }
